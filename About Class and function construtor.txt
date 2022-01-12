@@ -1,0 +1,42 @@
+/*Class in ES6 features. all the properties here are public name , age and dispplay are accessable outside world through object . At Es6 featue there is no private properties in class . But it is proposed in future there private propertis are declared using # keyword(like .. #age , #name.)
+*/
+
+class myclass{ 
+  constructor(name,age){
+    this.name = name;
+    this.age = age;
+  }
+  
+  display(){
+    console.log(`name is ${this.name} age is ${this.age}`);
+  }
+}
+
+//function constructor.
+
+function myclassfun(name,age){
+  
+  this.name = name;
+  this.age = age;
+  this.display = function(){
+    console.log(`name is ${this.name} age is ${this.age}`);
+  }
+}
+
+myclassfun.prototype.fun2 = function(){
+    console.log(`only age is ${this.age}`);
+  }
+
+
+
+
+let obj = new myclass("srini",30);
+obj.display();
+obj.name = "vasan";
+obj.display();
+
+
+let objfun = new myclassfun("vasan1",28);
+objfun.display();
+objfun.fun2();
+
